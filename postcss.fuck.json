@@ -1,0 +1,6 @@
+{
+  "use": ["postcss-import", "postcss-cssnext", "cssnano", "postcss-reporter"],
+  "autoprefixer": {
+    "browsers": "last 2 versions"
+  }
+}

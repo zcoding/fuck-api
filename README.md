@@ -11,3 +11,12 @@ fuck-api将提供包括但不限于以下功能：
 + 接口版本控制
 + 团队协作
 + 其它
+
+## 本项目基于以下项目进行开发
+
++ NodeJS
++ MongoDB
++ koa
++ Vue
++ webpack
++ mock.js
