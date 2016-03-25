@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server",
-    "build": "webpack --progress",
+    "start": "node main.js",
+    "dev": "webpack-dev-server --progress --inline --hot --config webpack.fuck.js --port 9999",
     "postcss": "postcss -w --no-map.inline -c postcss.fuck.json -o assets/css/app.css web/css/main.css"
   },
   "repository": {
@@ -27,6 +27,10 @@
     "css-loader": "^0.23.1",
     "cssnano": "^3.5.2",
     "koa": "^1.2.0",
+    "koa-route": "^2.4.2",
+    "koa-static": "^2.0.0",
+    "localforage": "^1.4.0",
+    "open": "0.0.5",
     "postcss": "^5.0.19",
     "postcss-cli": "^2.5.1",
     "postcss-cssnext": "^2.5.1",
@@ -38,6 +42,7 @@
     "vue-loader": "^8.2.1",
     "vue-router": "^0.7.11",
     "vue-style-loader": "^1.0.0",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }

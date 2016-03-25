@@ -17,7 +17,7 @@ app.use(_.get('/', function *(next) {
 
 }));
 
-var port = 10240;
+var port = 10244;
 
 app.listen(port, function() {
   open(`http://localhost:${port}`);

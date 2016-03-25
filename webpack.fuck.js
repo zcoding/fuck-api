@@ -4,8 +4,6 @@ module.exports = {
 
   entry: path.resolve(__dirname, './web/app/main.js'),
 
-  watch: true,
-
   output: {
     path: path.resolve(__dirname, './assets/app/'),
     publicPath: "/app/",
@@ -40,6 +38,8 @@ module.exports = {
       utils: path.resolve(__dirname, './web/app/utils'),
       components: path.resolve(__dirname, './web/app/components')
     }
-  }
+  },
+
+  devtool: "#inline-source-map"
 
 };

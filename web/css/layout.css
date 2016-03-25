@@ -1,0 +1,146 @@
+:root {
+  --headerHeight: 50px; /* 固定顶部导航栏高度 */
+  --asideWidth: 150px; /* 侧边栏的展开宽度 */
+  --asideWidthMin: 50px; /* 侧边栏收起宽度 */
+  --headerBackground: #ccc; /* 顶部导航栏背景色 */
+  --asideBackground: #bbb; /* 侧边栏背景色 */
+  --contentBackground: #fff; /* 内容背景色 */
+}
+
+.layout-outer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.layout-header {
+  width: 100%;
+  height: var(--headerHeight);
+  background: var(--headerBackground);
+  &:before, &:after {
+    display: table;
+    content: '';
+  }
+  &:after {
+    clear: both;
+  }
+
+  & .header-nav {
+    float: left;
+  }
+
+  & .header-form {
+    float: right;
+  }
+  & .header-form-control {
+    height: var(--headerHeight);
+    padding: 12px;
+    & input {
+      width: 180px;
+      border-radius: 15px;
+      transition: width 300ms;
+      &:focus {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.layout-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.layout-aside {
+  width: var(--asideWidth);
+  background: var(--asideBackground);
+  transition: width 300ms ease-in-out 0s;
+}
+
+.layout-aside.narrow {
+  width: var(--asideWidthMin);
+}
+
+.layout-content {
+  position: relative;
+  flex: 1;
+  background: var(--contentBackground);
+  overflow: auto;
+  &.loading {
+    overflow: hidden;
+  }
+}
+
+.container {
+  width: 100%;
+  min-width: 1024px;
+}
+
+.container-loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  background: rgba(255, 255, 255, .5);
+  user-select: none;
+  &.active {
+    display: block;
+  }
+}
+
+.layout-login {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #eee;
+}
+
+.layout-login-form {
+  width: 450px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -225px;
+  padding: 5px 20px 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  & .form {
+    margin-bottom: 0;
+  }
+  & h1 {
+    font-weight: 500;
+    font-size: 24px;
+    margin: 10px 0 30px;
+    text-align: center;
+  }
+}
+
+.layout-notification {
+  position: fixed;
+  left: 0;
+  top: var(--headerHeight);
+  width: 100%;
+  padding-left: var(--asideWidth);
+  transition: padding-left 300ms ease-in-out 0s;
+  &.show {
+    display: block;
+  }
+  &.narrow {
+    padding-left: var(--asideWidthMin);
+  }
+}
+
+.layout-message {
+  position: fixed;
+  right: 20px;
+  top: calc(var(--headerHeight) + 10px);
+  z-index: 100;
+}

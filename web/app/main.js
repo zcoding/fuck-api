@@ -5,10 +5,10 @@ import filters      from './filters';
 import directives   from './directives';
 import Localforage  from 'localforage';
 import config       from './app.config';
-import { cooker }   from 'utils';
+import cooker   from 'utils/cooker';
 // 全局组件
-import uiNotificationTips from 'components/uiNotificationTips.vue';
-import uiMessageTips from 'components/uiMessageTips.vue';
+// import uiNotificationTips from 'components/uiNotificationTips.vue';
+// import uiMessageTips from 'components/uiMessageTips.vue';
 
 const OM_APP_VERSION = config.version;
 
@@ -21,7 +21,7 @@ let Router = new VueRouter();
 let App = Vue.extend({
 
   components: {
-    uiMessageTips, uiNotificationTips
+    // uiMessageTips, uiNotificationTips
   },
 
   methods: {
@@ -86,4 +86,4 @@ Router.beforeEach(function (transition) {
   transition.next();
 });
 
-Router.start(App, '#app-main');
+Router.start(App, document.body);
